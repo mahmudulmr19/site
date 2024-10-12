@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Navbar } from "./components/nav";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -63,6 +65,8 @@ export default function RootLayout({
       )}
     >
       <body className="antialiased tracking-tight">
+        <Analytics />
+        <SpeedInsights />
         <div className="min-h-screen flex flex-col justify-between pt-0 md:pt-8 p-8">
           <main className="max-w-[60ch] mx-auto w-full space-y-6">
             <Navbar />
