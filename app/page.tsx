@@ -1,4 +1,4 @@
-import { Badge } from "./components/badge";
+import { Badge } from "@/components/badge";
 
 export default function Page() {
   return (
@@ -32,14 +32,36 @@ export default function Page() {
       {/* Skills Section */}
       <section className="mt-10">
         <h2 className="mb-4 text-xl font-semibold tracking-tight">Skills</h2>
-        <ul className="list-disc list-inside prose prose-neutral dark:prose-invert">
-          <li>HTML & CSS</li>
-          <li>JavaScript & TypeScript</li>
-          <li>React & Next.js</li>
-          <li>Node.js</li>
-          <li>Database Management (Prisma, Firebase)</li>
-          <li>TailwindCSS</li>
-        </ul>
+        <div className="prose prose-neutral dark:prose-invert">
+          <div className="flex flex-wrap gap-2">
+            <Badge>HTML5</Badge>
+            <Badge>CSS3</Badge>
+            <Badge>JavaScript (ES6+)</Badge>
+            <Badge>TypeScript</Badge>
+            <Badge>React.js</Badge>
+            <Badge>Next.js</Badge>
+            <Badge>TailwindCSS</Badge>
+            <Badge>CSS-in-JS</Badge>
+            <Badge>Node.js</Badge>
+            <Badge>Express.js</Badge>
+            <Badge>PostgreSQL</Badge>
+            <Badge>MongoDB</Badge>
+            <Badge>MySQL</Badge>
+            <Badge>GraphQL</Badge>
+            <Badge>RESTful APIs</Badge>
+            <Badge>Prisma ORM</Badge>
+            <Badge>Redux</Badge>
+            <Badge>React Query</Badge>
+            <Badge>Git</Badge>
+            <Badge>GitHub</Badge>
+            <Badge>Docker</Badge>
+            <Badge>AWS</Badge>
+            <Badge>Vercel</Badge>
+            <Badge>Netlify</Badge>
+            <Badge>Testing (Jest)</Badge>
+            <Badge>React Testing Library</Badge>
+          </div>
+        </div>
       </section>
 
       {/* Interests Section */}
