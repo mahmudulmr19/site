@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
-import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import type { Metadata } from "next";
 import { STIX_Two_Text } from "next/font/google";
+import "./globals.css";
 
 const fontSans = STIX_Two_Text({
   subsets: ["latin"],
@@ -52,15 +52,13 @@ export default function RootLayout({
       <body
         className={cn(
           "antialiased bg-background text-foreground",
-          fontSans.className
+          fontSans.className,
         )}
       >
         <Analytics />
         <SpeedInsights />
 
-        <main className="w-full mt-0 md:mt-16 max-w-xl mx-auto">
-          {children}
-        </main>
+        <main className="w-full mt-0 md:mt-16">{children}</main>
       </body>
     </html>
   );
