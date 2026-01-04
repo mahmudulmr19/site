@@ -1,20 +1,12 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
-import "./globals.css";
 import { cn } from "@/lib/utils";
-import { Navbar } from "@/components/nav";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import type { Metadata } from "next";
+import { STIX_Two_Text } from "next/font/google";
+import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const fontSans = STIX_Two_Text({
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -56,23 +48,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={cn(
-        "antialiased bg-background text-foreground",
-        geistSans.variable,
-        geistMono.variable
-      )}
-    >
-      <body className="antialiased tracking-tight">
+    <html lang="en">
+      <body
+        className={cn(
+          "antialiased bg-background text-foreground",
+          fontSans.className,
+        )}
+      >
         <Analytics />
         <SpeedInsights />
-        <div className="min-h-screen flex flex-col justify-between pt-0 md:pt-8 p-8">
-          <main className="max-w-[60ch] mx-auto w-full space-y-6">
-            <Navbar />
-            {children}
-          </main>
-        </div>
+
+        <main className="w-full mt-0 md:mt-16">{children}</main>
       </body>
     </html>
   );
